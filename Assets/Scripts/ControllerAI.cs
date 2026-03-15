@@ -13,6 +13,10 @@ public class ControllerAI : Controller
     public float FOVAngle = 60.0f;
     public float maxShootingDistance = 5.0f;
 
+    public override void Start()
+    {
+        GameManager.instance.enemies.Add(this);
+    }
 
     public override void MakeDecisions() {}
 

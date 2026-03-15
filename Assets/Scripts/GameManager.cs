@@ -66,22 +66,22 @@ public class GameManager : MonoBehaviour
     public void SpawnEnemies()
     {
         // Spawn a tank (and store it in tanks)
-        //Pawn tempTankPawn1 = SpawnTank( enemyPawnPrefab, new Vector3( 10.0f, 0.0f, 0.0f ) );
-        //Pawn tempTankPawn2 = SpawnTank( enemyPawnPrefab, new Vector3( 5.0f, 0.0f, 5.0f ) );
-        Pawn tempTankPawn3 = SpawnTank( enemyPawnPrefab, new Vector3( 10.0f, 0.0f, 0.0f ) );
-        //Pawn tempTankPawn4 = SpawnTank( enemyPawnPrefab, new Vector3( 10.0f, 0.0f, 0.0f ) );
+        Pawn tempTankPawn1 = SpawnTank( enemyPawnPrefab, new Vector3( 5.0f, 0.0f, -5.0f ) );
+        Pawn tempTankPawn2 = SpawnTank( enemyPawnPrefab, new Vector3( 5.0f, 0.0f, 5.0f ) );
+        Pawn tempTankPawn3 = SpawnTank( enemyPawnPrefab, new Vector3( -5.0f, 0.0f, 5.0f ) );
+        Pawn tempTankPawn4 = SpawnTank( enemyPawnPrefab, new Vector3( -5.0f, 0.0f, -5.0f ) );
 
         // Spawn an enemy controller ( and store it in enemies)
-        //ControllerAI_Soldier tempTankController1 = SpawnEnemySoldierController( enemyControllerSoldierPrefab );
-        //ControllerAI_Patroller tempTankController2 = SpawnEnemyPatrollerController( enemyControllerPatrollerPrefab );
+        ControllerAI_Soldier tempTankController1 = SpawnEnemySoldierController( enemyControllerSoldierPrefab );
+        ControllerAI_Patroller tempTankController2 = SpawnEnemyPatrollerController( enemyControllerPatrollerPrefab );
         ControllerAI_Runner tempTankController3 = SpawnEnemyRunnerController( enemyControllerRunnerPrefab );
-        //ControllerAI_Vulture tempTankController4 = SpawnEnemyVultureController( enemyControllerVulturePrefab );
+        ControllerAI_Vulture tempTankController4 = SpawnEnemyVultureController( enemyControllerVulturePrefab );
 
         // Have the enemy possess the pawn
-        //tempTankController1.Possess( tempTankPawn1 );
-        //tempTankController2.Possess( tempTankPawn2 );
+        tempTankController1.Possess( tempTankPawn1 );
+        tempTankController2.Possess( tempTankPawn2 );
         tempTankController3.Possess( tempTankPawn3 );
-        //tempTankController4.Possess( tempTankPawn4 );
+        tempTankController4.Possess( tempTankPawn4 );
     }
 
     public Pawn SpawnTank( GameObject prefab, Vector3 position )

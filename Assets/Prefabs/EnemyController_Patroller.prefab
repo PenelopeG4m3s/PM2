@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControllerAI_Patroller
   pawn: {fileID: 0}
-  currentState: 4
+  currentState: 5
   target: {fileID: 0}
   fleeDistance: 5
   lastStateChange: 0

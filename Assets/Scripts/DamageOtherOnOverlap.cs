@@ -5,11 +5,17 @@ public class DamageOtherOnOverlap : MonoBehaviour
 {
     public float damageDone;
     private Collider _collider;
+    private Projectile _projectile;
 
     public void Start()
     {
         _collider = GetComponent<Collider>();
         _collider.isTrigger = true;
+        _projectile = GetComponent<Projectile>();
+        if (_projectile != null)
+        {
+            damageDone = _projectile.damageDone;
+        }
     }
 
     public void OnTriggerEnter( Collider other )
