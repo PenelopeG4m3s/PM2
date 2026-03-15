@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class PawnTank : Pawn
 {
+    private ShooterTank shooter;
+    public float shootForce;
+
     public override void Start()
     {
         // Save my tank in my GameManager
         GameManager.instance.tanks.Add(this);
+
+        // Get the shooter component
+        shooter = GetComponent<ShooterTank>();
 
         // Do what all pawns do
         base.Start();
@@ -29,6 +35,11 @@ public class PawnTank : Pawn
 
     public override void Shoot()
     {
-        Debug.Log("Pew pew pew");
+        shooter.Shoot();
+    }
+
+    public override void RotateTowards(Vector3 position, float turnSpeed)
+    {
+        mover.RotateTowards( position, turnSpeed );
     }
 }
